@@ -4,7 +4,10 @@ import useSWR from "swr";
 import moment from "moment/moment";
 import { Button, Skeleton, Table } from "antd";
 import Link from "next/link";
+import BitcoinChart from "./";
+
 const fetcher = (url) => axios.get(url).then((res) => res.data.data);
+
 const columns = [
   { title: "Asset", dataIndex: "asset", key: "asset" },
   { title: "free", dataIndex: "free", key: "free" },
@@ -33,6 +36,7 @@ const Main = () => {
           size="small"
         />
       </div>
+      <BitcoinChart />
       <div>
         <Link href={"/trade"} className="bg-black text-white p-2 rounded-lg">
           Trade
